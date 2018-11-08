@@ -1,0 +1,9 @@
+<div class="card">
+  <img class="card-img-top" [src]="foodData.picture" alt="{{foodData.foodName}}">
+  <div class="card-body">
+    <h5 class="card-title">{{foodData.foodName}}</h5>
+    <p class="card-text">{{foodData.description}}</p>
+    <p class="card-text">$<em>{{foodData.price}}</em></p>
+    <a [routerLink]="['/foods', foodData.id]" class="btn btn-primary">Browse</a>
+  </div>
+</div>

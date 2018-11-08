@@ -1,0 +1,17 @@
+<div style="text-align: center" *ngIf="!loading$ | async">
+  <img src="../../../assets/spinner.gif">
+</div>
+<div class="row">
+  <div class="col-md-4" style="text-align: center">
+    <em class="h1 text-info">All Foods</em>
+  </div>
+  <div class="col-md-4 offset-4">
+    <a class="btn btn-primary" routerLink="/foods/add">Add Food</a>
+  </div>
+</div>
+<div class="row" *ngIf="loading$ | async">
+  <div class="col-md-4 mt-3" *ngFor="let food of (foods$) | async">
+    <app-food-item [foodData]="food"></app-food-item>
+  </div>
+</div>
+

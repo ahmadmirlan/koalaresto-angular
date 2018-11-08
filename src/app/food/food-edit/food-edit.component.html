@@ -1,0 +1,41 @@
+<div class="row">
+  <div class="col-md-6 input-error">
+    <form [formGroup]="regulerForm" (ngSubmit)="addFood()">
+      <div class="form-group">
+        <label for="foodName" class="badge badge-info">Food Name</label>
+        <input id="foodName" class="form-control" formControlName="foodName"
+               type="text" placeholder="Food Name">
+      </div>
+      <div class="form-group">
+        <label for="price" class="badge badge-info">Price</label>
+        <input id="price" class="form-control" type="number" formControlName="price"
+               placeholder="1" step="0.1">
+      </div>
+      <div class="form-group">
+        <label for="picture" class="badge badge-info">Image</label>
+        <input id="picture" class="form-control" type="text" formControlName="picture"
+               placeholder="http://yourimage.com/images.jpg">
+      </div>
+      <div class="form-group">
+        <label for="keywords" class="badge badge-info">Keywords</label>
+        <input id="keywords" class="form-control" type="text" formControlName="keywords"
+               placeholder="Keywords">
+      </div>
+      <div class="form-group">
+        <label for="description" class="badge badge-info">Description</label>
+        <textarea id="description" rows="4" formControlName="description"
+                  class="form-control"
+                  placeholder="Description">
+          </textarea>
+      </div>
+      <div class="form-group">
+        <button type="submit" [disabled]="!regulerForm.valid"
+                class="btn btn-success mr-2">Add Food</button>
+        <a class="btn btn-secondary ml-2" routerLink="/foods">Cancel</a>
+      </div>
+    </form>
+  </div>
+  <div class="col-md-3">
+    <img [src]="regulerForm.value.picture" class="img-thumbnail">
+  </div>
+</div>
